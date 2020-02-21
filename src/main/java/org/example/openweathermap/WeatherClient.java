@@ -7,14 +7,14 @@ import retrofit.RestAdapter;
 
 public class WeatherClient implements IWeatherDetails {
 
+    public WeatherClient() {
+    }
+
     private static final IWeatherDetails clientWeatherDetails = new RestAdapter
             .Builder()
             .setEndpoint(Config.BASE_URL)
             .build()
             .create(IWeatherDetails.class);
-
-    public WeatherClient() {
-    }
 
     @Override
     public WeatherDetails getWeatherDetails(String query) {

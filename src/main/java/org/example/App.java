@@ -1,11 +1,13 @@
 package org.example;
 
 import org.example.beans.Weather;
+import org.example.helpers.TemperatureExtractor;
+import org.example.helpers.TemperatureFormatter;
 import org.example.openweathermap.WeatherClient;
 import org.example.openweathermap.WeatherService;
 
 public class App {
-    private static final String CITY = "Moscow";
+    private static final String CITY = "Bilbo";
 
     public static void main(String[] args) {
 
@@ -13,8 +15,9 @@ public class App {
         WeatherService weatherService = new WeatherService(client);
 
         Weather weather = weatherService.getWeather(CITY);
-        double temperature = weather.getTemperature();
+        double celsius = TemperatureExtractor.getCelsius(weather);
 
-        System.out.printf("Temperature in %s t=%f\n", CITY, temperature);
+        String out = TemperatureFormatter.humanize(celsius, 'C');
+        System.out.printf("Temperature in %s %s\n", CITY, out);
     }
 }
