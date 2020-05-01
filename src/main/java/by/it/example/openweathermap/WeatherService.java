@@ -1,9 +1,9 @@
-package org.example.openweathermap;
+package by.it.example.openweathermap;
 
-import org.example.beans.Weather;
-import org.example.beans.WeatherDetails;
-import org.example.interfaces.IWeatherDetails;
-import org.example.interfaces.IWeather;
+import by.it.example.beans.Weather;
+import by.it.example.beans.WeatherDetails;
+import by.it.example.interfaces.IWeather;
+import by.it.example.interfaces.IWeatherDetails;
 
 public class WeatherService implements IWeather {
 

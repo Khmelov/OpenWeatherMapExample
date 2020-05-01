@@ -1,7 +1,7 @@
-package org.example.interfaces;
+package by.it.example.interfaces;
 
 
-import org.example.beans.Weather;
+import by.it.example.beans.Weather;
 
 @FunctionalInterface
 public interface IWeather {

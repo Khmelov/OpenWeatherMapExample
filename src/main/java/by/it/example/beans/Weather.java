@@ -1,4 +1,4 @@
-package org.example.beans;
+package by.it.example.beans;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -8,5 +8,4 @@ import lombok.AllArgsConstructor;
 public class Weather {
 
     private double temperature;
-
 }

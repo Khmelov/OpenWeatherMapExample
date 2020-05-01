@@ -1,8 +1,11 @@
-package org.example.helpers;
+package by.it.example.helpers;
 
-import org.example.beans.Weather;
+import by.it.example.beans.Weather;
 
 public class TemperatureExtractor {
+
+    private TemperatureExtractor() {
+    }
 
     public static double getCelsius(Weather weather) {
         double kelvin = weather.getTemperature();

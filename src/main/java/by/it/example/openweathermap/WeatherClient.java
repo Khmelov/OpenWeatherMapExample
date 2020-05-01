@@ -1,8 +1,8 @@
-package org.example.openweathermap;
+package by.it.example.openweathermap;
 
-import org.example.Config;
-import org.example.beans.WeatherDetails;
-import org.example.interfaces.IWeatherDetails;
+import by.it.example.App;
+import by.it.example.beans.WeatherDetails;
+import by.it.example.interfaces.IWeatherDetails;
 import retrofit.RestAdapter;
 
 public class WeatherClient implements IWeatherDetails {
@@ -12,7 +12,7 @@ public class WeatherClient implements IWeatherDetails {
 
     private static final IWeatherDetails clientWeatherDetails = new RestAdapter
             .Builder()
-            .setEndpoint(Config.BASE_URL)
+            .setEndpoint(App.BASE_URL)
             .build()
             .create(IWeatherDetails.class);
 

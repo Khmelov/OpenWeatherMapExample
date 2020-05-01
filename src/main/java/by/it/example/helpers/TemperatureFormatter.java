@@ -1,6 +1,9 @@
-package org.example.helpers;
+package by.it.example.helpers;
 
 public class TemperatureFormatter {
+
+    private TemperatureFormatter() {
+    }
 
     public static String humanize(double value, char measure) {
         char sign = value < 0 ? '-' : '+';
