@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 public class WebApp {
 
@@ -47,21 +48,20 @@ public class WebApp {
 
 
     private static void runTomcat() throws ServletException, LifecycleException {
-        File baseFolder = new File(System.getProperty("user.dir"));
-        File appFolder = new File(baseFolder, "src/main/java/by/it/example/webapp".replace("/", File.separator));
+        File tomcatRoot = new File(System.getProperty("user.dir"));
+        File webAppFolder = new File(WebApp.class.getResource("/webapp").getPath());
 
         Tomcat tomcat = new Tomcat();
-        tomcat.setBaseDir(baseFolder.getAbsolutePath());
+        tomcat.setBaseDir(tomcatRoot.getAbsolutePath());
         tomcat.setPort(8089);
-        tomcat.getHost().setAppBase(appFolder.getAbsolutePath());
-        Context context = tomcat.addWebapp("", appFolder.getAbsolutePath());
-        context.addWelcomeFile("index");
+        tomcat.getHost().setAppBase(webAppFolder.getAbsolutePath());
+        Context context = tomcat.addWebapp("", webAppFolder.getAbsolutePath());
+        context.addWelcomeFile("get");
 
         tomcat.getConnector();
         Wrapper wrapper = tomcat.addServlet("", "Weather", new WeatherServlet());
         wrapper.setLoadOnStartup(1);
         wrapper.addMapping("/get");
-        wrapper.addMapping("/index");
 
         tomcat.start();
         tomcat.getServer().await();

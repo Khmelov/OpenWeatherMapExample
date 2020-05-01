@@ -13,7 +13,7 @@ public class ConsoleApp {
         Weather weather = App.weatherService.getWeather(CITY);
         double celsius = TemperatureExtractor.getCelsius(weather);
 
-        String value = TemperatureFormatter.humanize(celsius, 'C');
+        String value = TemperatureFormatter.humanize(celsius, "°C");
         System.out.printf("Temperature in %s %s\n", CITY, value);
     }
 }

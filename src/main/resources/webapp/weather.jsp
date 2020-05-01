@@ -25,10 +25,10 @@
         <nav>
             <ul class="nav nav-pills float-right">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href=".">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="/">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -66,7 +66,7 @@
     </div>
 
     <footer class="footer">
-        <p>Company 2020</p>
+        <p>IT Academy 2020</p>
     </footer>
 
 </div> <!-- /container -->

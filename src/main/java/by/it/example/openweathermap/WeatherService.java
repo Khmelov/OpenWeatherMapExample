@@ -7,7 +7,7 @@ import by.it.example.interfaces.IWeatherDetails;
 
 public class WeatherService implements IWeather {
 
-    private IWeatherDetails client;
+    private final IWeatherDetails client;
 
     public WeatherService(IWeatherDetails client) {
         this.client = client;
