@@ -26,7 +26,8 @@ public class WebAppTest {
 
 
     /**
-     * small sample, but it is just sample, to google pattern Page Object
+     * small sample, but it is just sample,
+     * see better in google pattern Page Object
      */
 
     @BeforeClass
