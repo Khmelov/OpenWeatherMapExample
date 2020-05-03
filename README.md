@@ -1,4 +1,4 @@
-## Sample small weathers web-application.
+## Small example (weathers web-application).
 #### Application Console & Web.
 
 ###### See package src/main/java -> by.it.example
