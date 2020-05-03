@@ -7,14 +7,12 @@ import static org.junit.Assert.*;
 
 public class WeatherClientGoodTest {
 
-    private final String CITY = "Minsk";
-    private final double TEMPERATURE = 280;
 
     @Test
     public void getWeatherDetails() {
-        WeatherClient weatherClient = Mocks.createMock(CITY, TEMPERATURE);
-        WeatherDetails details = weatherClient.getWeatherDetails("Minsk");
+        WeatherClient weatherClient = Mocks.createMock(Data.CITY, Data.TEMPERATURE);
+        WeatherDetails details = weatherClient.getWeatherDetails(Data.CITY);
         WeatherDetails.Status status = details.getStatus();
-        assertEquals(TEMPERATURE, status.getTemperature(), 1e-10);
+        assertEquals(Data.TEMPERATURE, status.getTemperature(), 1e-10);
     }
 }

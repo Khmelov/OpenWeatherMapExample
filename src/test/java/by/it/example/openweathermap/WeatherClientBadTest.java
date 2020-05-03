@@ -10,7 +10,7 @@ public class WeatherClientBadTest {
     @Test
     public void getWeatherDetails() {
         WeatherClient weatherClient = new WeatherClient();
-        WeatherDetails details = weatherClient.getWeatherDetails("Minsk");
+        WeatherDetails details = weatherClient.getWeatherDetails(Data.CITY);
         assertNotNull(details);
         WeatherDetails.Status status = details.getStatus();
         assertNotNull(status);

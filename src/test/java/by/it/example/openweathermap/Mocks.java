@@ -11,6 +11,7 @@ public class Mocks {
     @Mock
     static WeatherClient weatherClient;
 
+    @SuppressWarnings("SameParameterValue")
     static WeatherClient createMock(String forCity, double returnTemperature) {
         weatherClient = Mockito.mock(WeatherClient.class);
         WeatherDetails.Status status = new WeatherDetails.Status();

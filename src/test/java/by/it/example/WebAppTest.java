@@ -25,14 +25,20 @@ public class WebAppTest {
     private static Tomcat tomcat;
 
 
+    /**
+     * small sample, but it is just sample, to google pattern Page Object
+     */
+
     @BeforeClass
     public static void init() throws ServletException, LifecycleException {
         tomcat = WebApp.getTomcat();
         tomcat.start();
-        driver = new ChromeDriver(); //or PhantomJSDriver
+        //please, before testing, download and set path for PhantomJSDriver.exe and/or ChromeDriver.exe
+        driver = new PhantomJSDriver(); // ChromeDriver() or PhantomJSDriver
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("http://localhost:8089/get?city=" + CITY);
     }
+
 
     @Test
     public void checkTitle() {

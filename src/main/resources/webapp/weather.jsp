@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
