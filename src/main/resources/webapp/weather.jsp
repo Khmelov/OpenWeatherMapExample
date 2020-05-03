@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather: ${city}</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -28,7 +28,7 @@
                     <a class="nav-link active" href=".">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">About</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
@@ -51,10 +51,12 @@
         </p>
         <h2 class="display-4">Now the temperature is ${value}</h2>
         <div data-component-maps="" style="min-height:500px;min-width:500px;position:relative">
+
             <iframe frameborder="0"
                     src="https://maps.google.com/maps?&amp;q=${city}&amp;z=10&amp;t=q&amp;output=embed" width="100"
                     height="100"
-                    style="width:100%;height:100%;position:absolute;left:0px;pointer-events:none"></iframe>
+                    style="width:100%;height:100%;position:absolute;left:0px;">
+            </iframe>
         </div>
 
         <p class="lead">Weather details for ${city}</p>

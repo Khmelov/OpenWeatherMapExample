@@ -7,9 +7,6 @@ import retrofit.RestAdapter;
 
 public class WeatherClient implements IWeatherDetails {
 
-    public WeatherClient() {
-    }
-
     private static final IWeatherDetails clientWeatherDetails = new RestAdapter
             .Builder()
             .setEndpoint(App.BASE_URL)
