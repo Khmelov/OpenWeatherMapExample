@@ -9,5 +9,5 @@
 #### Demo for tests. 
 ###### See package src/test/java -> by.it.example
  1. JUnit (unit tests)
- 2. Mockito (integrate tests)
+ 2. Mockito (integrated tests)
  3. Selenium WebDriver (UI tests)
