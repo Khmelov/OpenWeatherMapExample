@@ -7,6 +7,7 @@ import org.apache.catalina.startup.Tomcat;
 
 import javax.servlet.ServletException;
 import java.io.File;
+import java.util.Objects;
 
 public class WebApp {
 
@@ -14,7 +15,11 @@ public class WebApp {
     public static final String SERVLET_NAME = "Weather";
     public static final String URI_FOR_GET = "get";
     public static final File TOMCAT_ROOT = new File(System.getProperty("user.dir"));
-    public static final File WEB_APP_FOLDER = new File(WebApp.class.getResource("/webapp").getPath());
+    public static final File WEB_APP_FOLDER = new File(
+            Objects.requireNonNull(
+                    WebApp.class.getResource("/webapp")
+            ).getPath()
+    );
 
     public static void main(String... args) throws Exception {
         Tomcat tomcat = getTomcat();
@@ -22,8 +27,7 @@ public class WebApp {
         tomcat.getServer().await();
     }
 
-
-    static Tomcat getTomcat() throws ServletException {
+    static Tomcat getTomcat() {
         Tomcat tomcat = new Tomcat();
         tomcat.setBaseDir(TOMCAT_ROOT.getAbsolutePath());
         tomcat.setPort(8089);
@@ -37,7 +41,7 @@ public class WebApp {
         tomcat.getConnector();
         Wrapper wrapper = tomcat.addServlet("", SERVLET_NAME, WEATHER_SERVLET);
         wrapper.setLoadOnStartup(1);
-        wrapper.addMapping("/"+URI_FOR_GET);    //map to "get?city=Minsk"
+        wrapper.addMapping("/" + URI_FOR_GET);    //map to "get?city=Minsk"
         context.addWelcomeFile(URI_FOR_GET);      //home == servlet
     }
 
