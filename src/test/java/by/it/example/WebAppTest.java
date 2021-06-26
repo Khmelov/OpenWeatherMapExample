@@ -5,17 +5,16 @@ import org.apache.catalina.startup.Tomcat;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import javax.servlet.ServletException;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 
 public class WebAppTest {
@@ -32,6 +31,7 @@ public class WebAppTest {
 
     @BeforeClass
     public static void init() throws ServletException, LifecycleException {
+        Locale.setDefault(Locale.ENGLISH);
         tomcat = WebApp.getTomcat();
         tomcat.start();
         //please, before testing, download and set path for PhantomJSDriver.exe and/or ChromeDriver.exe
@@ -44,16 +44,16 @@ public class WebAppTest {
     @Test
     public void checkTitle() {
         String title = driver.getTitle();
-        assertThat(title, notNullValue());
-        assertThat(title, containsString(CITY));
+        assertNotNull(title);
+        assertTrue(title.contains(CITY));
     }
 
     @Test
     public void findCityInPage() {
         By byLead = By.cssSelector("body > div > div.jumbotron > p.lead");
         String stringWithCity = driver.findElement(byLead).getText();
-        assertThat(stringWithCity, notNullValue());
-        assertThat(stringWithCity, containsString(CITY));
+        assertNotNull(stringWithCity);
+        assertTrue(stringWithCity.contains(CITY));
     }
 
     @AfterClass
