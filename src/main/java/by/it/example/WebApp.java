@@ -5,7 +5,6 @@ import org.apache.catalina.Context;
 import org.apache.catalina.Wrapper;
 import org.apache.catalina.startup.Tomcat;
 
-import javax.servlet.ServletException;
 import java.io.File;
 import java.util.Objects;
 
