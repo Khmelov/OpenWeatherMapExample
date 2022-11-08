@@ -1,6 +1,6 @@
 package by.it.example.openweathermap;
 
-import by.it.example.beans.Weather;
+import by.it.example.beans.WeatherEntity;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -14,7 +14,7 @@ public class WeatherServiceBadTest {
         assertNotNull(client);
         WeatherService service = new WeatherService(client);
         assertNotNull(service);
-        Weather weather = service.getWeather(Data.CITY);
+        WeatherEntity weather = service.getWeather(Data.CITY);
         assertNotNull(weather);
         double temperature = weather.getTemperature();
         assertTrue(temperature >= 0);

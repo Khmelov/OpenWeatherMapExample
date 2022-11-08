@@ -1,6 +1,6 @@
 package by.it.example;
 
-import by.it.example.beans.Weather;
+import by.it.example.beans.WeatherEntity;
 import by.it.example.helpers.TemperatureExtractor;
 import by.it.example.helpers.TemperatureFormatter;
 
@@ -10,7 +10,7 @@ public class ConsoleApp {
 
     public static void main(String[] args) {
 
-        Weather weather = App.weatherService.getWeather(CITY);
+        WeatherEntity weather = App.weatherService.getWeather(CITY);
         double celsius = TemperatureExtractor.getCelsius(weather);
 
         String value = TemperatureFormatter.humanize(celsius, "°C");

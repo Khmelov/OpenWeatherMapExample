@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Weather {
+public class WeatherEntity {
 
     private double temperature;
 }

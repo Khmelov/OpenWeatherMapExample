@@ -1,23 +1,22 @@
 package by.it.example.openweathermap;
 
-import by.it.example.beans.Weather;
-import by.it.example.beans.WeatherDetails;
-import by.it.example.interfaces.IWeather;
-import by.it.example.interfaces.IWeatherDetails;
+import by.it.example.beans.WeatherEntity;
+import by.it.example.interfaces.Weather;
+import by.it.example.interfaces.WeatherDetails;
 
-public class WeatherService implements IWeather {
+public class WeatherService implements Weather {
 
-    private final IWeatherDetails client;
+    private final WeatherDetails client;
 
-    public WeatherService(IWeatherDetails client) {
+    public WeatherService(WeatherDetails client) {
         this.client = client;
     }
 
     @Override
-    public Weather getWeather(String query) {
-        WeatherDetails details = client.getWeatherDetails(query);
+    public WeatherEntity getWeather(String query) {
+        by.it.example.beans.WeatherDetails details = client.getWeatherDetails(query);
         double temperature = details.getStatus().getTemperature();
-        return new Weather(temperature);
+        return new WeatherEntity(temperature);
     }
 
 }

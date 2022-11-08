@@ -1,6 +1,6 @@
 package by.it.example.helpers;
 
-import by.it.example.beans.Weather;
+import by.it.example.beans.WeatherEntity;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,7 +9,7 @@ public class TemperatureExtractorTest {
 
     @Test
     public void getCelsius() {
-        Weather weather = new Weather(270.15);
+        WeatherEntity weather = new WeatherEntity(270.15);
         double expected = -3;
         double actual = TemperatureExtractor.getCelsius(weather);
         assertEquals(expected, actual, 1e-10);
@@ -17,7 +17,7 @@ public class TemperatureExtractorTest {
 
     @Test
     public void getKelvins() {
-        Weather weather = new Weather(270.15);
+        WeatherEntity weather = new WeatherEntity(270.15);
         double expected = 270.15;
         double actual = TemperatureExtractor.getKelvins(weather);
         assertEquals(expected, actual, 1e-10);
@@ -25,7 +25,7 @@ public class TemperatureExtractorTest {
 
     @Test
     public void getFahrenheit() {
-        Weather weather = new Weather(270.15);
+        WeatherEntity weather = new WeatherEntity(270.15);
         double expected = 26.6;
         double actual = TemperatureExtractor.getFahrenheit(weather);
         assertEquals(expected, actual, 1e-10);

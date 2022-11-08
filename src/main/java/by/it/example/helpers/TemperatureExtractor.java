@@ -1,22 +1,24 @@
 package by.it.example.helpers;
 
-import by.it.example.beans.Weather;
+import by.it.example.beans.WeatherEntity;
 
 public class TemperatureExtractor {
+
+    public static final double ABSOLUTE_ZERO_IN_CELSIUS = 273.15;
 
     private TemperatureExtractor() {
     }
 
-    public static double getCelsius(Weather weather) {
+    public static double getCelsius(WeatherEntity weather) {
         double kelvin = weather.getTemperature();
-        return kelvin - 273.15;
+        return kelvin - ABSOLUTE_ZERO_IN_CELSIUS;
     }
 
-    public static double getKelvins(Weather weather) {
+    public static double getKelvins(WeatherEntity weather) {
         return weather.getTemperature();
     }
 
-    public static double getFahrenheit(Weather weather) {
+    public static double getFahrenheit(WeatherEntity weather) {
         return 32 + 9.0 / 5.0 * getCelsius(weather);
     }
 
