@@ -47,7 +47,7 @@
             <a class="btn btn-lg btn-success" href="get?city=Moscow" role="button">Moscow</a>
             <a class="btn btn-lg btn-success" href="get?city=London" role="button">London</a>
             <a class="btn btn-lg btn-success" href="get?city=Donetsk" role="button">Donetsk</a>
-            <a class="btn btn-lg btn-success" href="get?city=Barselona" role="button">Barselona</a>
+            <a class="btn btn-lg btn-success" href="get?city=Barcelona" role="button">Barcelona</a>
             <a class="btn btn-lg btn-success" href="get?city=Sankt-Peterburg" role="button">Sankt-Peterburg</a>
         </p>
         <h2 class="display-4">Now the temperature is ${value}</h2>
@@ -69,7 +69,14 @@
     </div>
 
     <footer class="footer">
-        <p>IT Academy 2020</p>
+        <p>JUnit demo for
+            <a href="https://www.it-academy.by/course/java-developer/jd1-programmirovanie-na-java/" target="_blank">
+                IT Academy
+            </a>  &
+            <a href="https://javarush.ru/university" target="_blank">
+                JRU
+            </a>
+            2022. A.Khmelov</p>
     </footer>
 
 </div> <!-- /container -->

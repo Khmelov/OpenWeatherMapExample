@@ -1,20 +1,22 @@
 package by.it.example;
 
+import by.it.example.server.EmbeddedTomcat;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-import javax.servlet.ServletException;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class WebAppTest {
@@ -29,14 +31,21 @@ public class WebAppTest {
      * see better in google pattern Page Object
      */
 
-    @BeforeClass
-    public static void init() throws ServletException, LifecycleException {
+    @BeforeAll
+    public static void init() throws LifecycleException {
         Locale.setDefault(Locale.ENGLISH);
-        tomcat = WebApp.getTomcat();
+        tomcat = new EmbeddedTomcat();
         tomcat.start();
-        //please, before testing, download and set path for PhantomJSDriver.exe and/or ChromeDriver.exe
-        driver = new PhantomJSDriver(); // ChromeDriver() or PhantomJSDriver
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+        ChromeOptions options = new ChromeOptions();
+        //set silent mode
+        options.addArguments("--headless");
+        // please, before testing, download and set path
+        // for phantomjs[.exe] and/or chromedriver[.exe]
+        driver = new ChromeDriver(options); // ChromeDriver() or PhantomJSDriver
+
+
+        driver.manage().timeouts().implicitlyWait(Duration.of(10, ChronoUnit.SECONDS));
         driver.get("http://localhost:8089/get?city=" + CITY);
     }
 
@@ -56,7 +65,7 @@ public class WebAppTest {
         assertTrue(stringWithCity.contains(CITY));
     }
 
-    @AfterClass
+    @AfterAll
     public static void finish() throws LifecycleException {
         driver.close();
         tomcat.stop();

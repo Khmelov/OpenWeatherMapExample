@@ -1,7 +1,7 @@
 package by.it.example.beans;
 
-import lombok.Data;
 import com.google.gson.annotations.SerializedName;
+import lombok.Data;
 
 @Data
 public class WeatherDetails {

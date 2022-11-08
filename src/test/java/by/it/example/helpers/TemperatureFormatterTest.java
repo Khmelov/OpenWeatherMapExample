@@ -1,8 +1,8 @@
 package by.it.example.helpers;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TemperatureFormatterTest {
 
@@ -10,13 +10,13 @@ public class TemperatureFormatterTest {
     public void humanizeStringMeasure() {
         String expected = "+2°C";
         String actual = TemperatureFormatter.humanize(2, "°C");
-        assertEquals("Incorrect TemperatureFormatter", expected, actual);
+        assertEquals(expected, actual,"Incorrect TemperatureFormatter");
     }
 
     @Test
     public void humanizeCharMeasure() {
         String expected = "+2°C";
         String actual = TemperatureFormatter.humanize(2, 'C');
-        assertEquals("Incorrect TemperatureFormatter", expected, actual);
+        assertEquals(expected, actual, "Incorrect TemperatureFormatter");
     }
 }
