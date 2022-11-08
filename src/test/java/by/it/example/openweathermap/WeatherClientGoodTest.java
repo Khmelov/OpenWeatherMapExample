@@ -9,7 +9,7 @@ public class WeatherClientGoodTest {
 
 
     @Test
-    public void getWeatherDetails() {
+    public void getWeatherDetailsTest() {
         WeatherClient weatherClient = Mocks.createMock(Data.CITY, Data.TEMPERATURE);
         WeatherDetails details = weatherClient.getWeatherDetails(Data.CITY);
         WeatherDetails.Status status = details.getStatus();

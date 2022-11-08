@@ -39,7 +39,7 @@ public class WebAppTest {
 
         ChromeOptions options = new ChromeOptions();
         //set silent mode
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         // please, before testing, download and set path
         // for phantomjs[.exe] and/or chromedriver[.exe]
         driver = new ChromeDriver(options); // ChromeDriver() or PhantomJSDriver
