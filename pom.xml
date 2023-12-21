@@ -10,7 +10,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <tomcat-embed.version>9.0.68</tomcat-embed.version>
+        <tomcat-embed.version>9.0.83</tomcat-embed.version>
     </properties>
 
     <name>openweathermap</name>
