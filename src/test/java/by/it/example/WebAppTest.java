@@ -1,6 +1,7 @@
 package by.it.example;
 
 import by.it.example.server.EmbeddedTomcat;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 import org.junit.jupiter.api.AfterAll;
@@ -33,6 +34,8 @@ public class WebAppTest {
 
     @BeforeAll
     public static void init() throws LifecycleException {
+        WebDriverManager.chromedriver().setup();
+
         Locale.setDefault(Locale.ENGLISH);
         tomcat = new EmbeddedTomcat();
         tomcat.start();
@@ -43,8 +46,6 @@ public class WebAppTest {
         // please, before testing, download and set path
         // for phantomjs[.exe] and/or chromedriver[.exe]
         driver = new ChromeDriver(options); // ChromeDriver() or PhantomJSDriver
-
-
         driver.manage().timeouts().implicitlyWait(Duration.of(10, ChronoUnit.SECONDS));
         driver.get("http://localhost:8089/get?city=" + CITY);
     }
