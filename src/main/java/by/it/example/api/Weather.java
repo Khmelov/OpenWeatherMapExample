@@ -1,7 +1,7 @@
-package by.it.example.interfaces;
+package by.it.example.api;
 
 
-import by.it.example.beans.WeatherEntity;
+import by.it.example.model.WeatherEntity;
 
 @SuppressWarnings("unused")
 @FunctionalInterface

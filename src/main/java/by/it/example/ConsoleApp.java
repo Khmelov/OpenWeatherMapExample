@@ -1,6 +1,6 @@
 package by.it.example;
 
-import by.it.example.beans.WeatherEntity;
+import by.it.example.model.WeatherEntity;
 import by.it.example.helpers.TemperatureExtractor;
 import by.it.example.helpers.TemperatureFormatter;
 

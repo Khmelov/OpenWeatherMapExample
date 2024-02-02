@@ -1,17 +1,17 @@
 package by.it.example.openweathermap;
 
 import by.it.example.App;
-import by.it.example.beans.WeatherDetails;
-import by.it.example.interfaces.WeatherGetter;
+import by.it.example.model.WeatherDetails;
+import by.it.example.api.WeatherLoader;
 import retrofit.RestAdapter;
 
-public class WeatherClient implements WeatherGetter {
+public class WeatherClient implements WeatherLoader {
 
-    private static final WeatherGetter clientWeatherDetails = new RestAdapter
+    private static final WeatherLoader clientWeatherDetails = new RestAdapter
             .Builder()
             .setEndpoint(App.BASE_URL)
             .build()
-            .create(WeatherGetter.class);
+            .create(WeatherLoader.class);
 
     @Override
     public WeatherDetails getWeatherDetails(String query) {

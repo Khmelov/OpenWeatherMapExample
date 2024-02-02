@@ -1,4 +1,4 @@
-package by.it.example.beans;
+package by.it.example.model;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;

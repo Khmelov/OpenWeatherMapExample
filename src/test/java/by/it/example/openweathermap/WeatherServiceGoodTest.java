@@ -1,6 +1,6 @@
 package by.it.example.openweathermap;
 
-import by.it.example.beans.WeatherEntity;
+import by.it.example.model.WeatherEntity;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

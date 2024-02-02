@@ -1,15 +1,15 @@
 package by.it.example.openweathermap;
 
-import by.it.example.beans.WeatherDetails;
-import by.it.example.beans.WeatherEntity;
-import by.it.example.interfaces.Weather;
-import by.it.example.interfaces.WeatherGetter;
+import by.it.example.model.WeatherDetails;
+import by.it.example.model.WeatherEntity;
+import by.it.example.api.Weather;
+import by.it.example.api.WeatherLoader;
 
 public class WeatherService implements Weather {
 
-    private final WeatherGetter client;
+    private final WeatherLoader client;
 
-    public WeatherService(WeatherGetter client) {
+    public WeatherService(WeatherLoader client) {
         this.client = client;
     }
 

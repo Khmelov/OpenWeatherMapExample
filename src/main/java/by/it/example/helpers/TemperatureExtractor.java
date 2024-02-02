@@ -1,6 +1,6 @@
 package by.it.example.helpers;
 
-import by.it.example.beans.WeatherEntity;
+import by.it.example.model.WeatherEntity;
 
 public class TemperatureExtractor {
 

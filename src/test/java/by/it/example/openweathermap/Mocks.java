@@ -1,6 +1,6 @@
 package by.it.example.openweathermap;
 
-import by.it.example.beans.WeatherDetails;
+import by.it.example.model.WeatherDetails;
 import lombok.experimental.UtilityClass;
 import org.mockito.Mockito;
 
